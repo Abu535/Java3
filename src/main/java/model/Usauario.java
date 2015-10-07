@@ -91,9 +91,15 @@ public class Usauario implements Serializable {
         return true;
     }
 
-    @Override
+  /*  @Override
     public String toString() {
         return "model.Usauario[ idUsuario=" + idUsuario + " ]";
+    }*/
+
+    @Override
+    public String toString() {
+        return "Usauario{" + "idUsuario=" + idUsuario + ", login=" + login + ", password=" + password + '}';
     }
+    
     
 }
