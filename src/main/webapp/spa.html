@@ -4,18 +4,34 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html ng-app="aplication"><!-- se carga primero el modulo y despues los controladores-->
+<html><!-- se carga primero el modulo y despues los controladores-->
     <head>
         <title>TODO supply a title</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/libs/angular.js/angular.js"></script> <!-- siempre se pone el script de angularantes-->
+        <script src="js/angular.js/angular.js"></script> <!-- siempre se pone el script de angularantes-->
         <link rel="stylesheet" href="js/libs/twitter-bootstrap/css/bootstrap-theme.css"/>
-    <script src="js/app.js"></script>
+        <script src="js/estacion.js"></script>
     </head>
-    <body ng-controller="ctrlPrincipal">
-        <div>TODO write content</div>
+    <body ng-app="estacion">
+        <div ng-controller="ctrlEstacion">
+            <h1>Este pequeno proyecto lee datos de una estacion</h1>
         <input type="text" ng-model="mensajito"/>
         {{mensajito}}
+        <p> La temperatura en esta hora es: {{temperatura}}</p>
+       
+        <table class="table table-bordered">
+            <tr class="success">
+                <th>Hora</th>
+                <th>Temperatura</th>
+                <th> UV</th>
+                </tr>
+                <tr ng-repeat="es in esta">
+                    <td>{{es.hora}}</td>
+                    <td>{{es.temperatura}}</td>
+                    <td>{{es.uv}}</td>
+                </tr>
+        </table>
+         </div>
     </body>
 </html>
